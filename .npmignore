@@ -1,0 +1,8 @@
+node_modules/
+src/
+.DS_Store
+.gitignore
+.npmignore
+rollup.config.js
+tsconfig.json
+yarn.lock
