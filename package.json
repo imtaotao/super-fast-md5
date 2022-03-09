@@ -1,6 +1,6 @@
 {
   "name": "super-fast-md4",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "fast md5",
   "main": "dist/md5.cjs.js",
   "module": "dist/md5.esm-builder.js",
