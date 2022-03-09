@@ -5,7 +5,7 @@
 
 </div>
 
-Super fast and super small wasm version of `md5` algorithm, able to use in `browser` and `nodejs`. The implementation comes from [hash-wasm](https://github.com/Daninet/hash-wasm), we talk about asynchronous syntax simplified to synchronous syntax.
+Super fast and super small wasm version of `md5` algorithm, able to use in `browser` and `nodejs`. The implementation comes from [hash-wasm](https://github.com/Daninet/hash-wasm), We simplify the asynchronous syntax to synchronous syntax.
 
 ### CDN
 
