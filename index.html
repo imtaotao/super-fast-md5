@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super fast md5</title>
+</head>
+<body>
+  <textarea id="input" rows="10" cols="50"></textarea></div>
+  <div>size: <span id="size">0kb</span></div>
+  <div>time: <span id="time">0ms</span></div>
+  <div>md5: <span id="md5"></span></div>
+
+  <script src="https://unpkg.com/super-fast-md5/dist/md5.umd.js"></script>
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    const setUi = (t, s, hash) => {
+      const info = t === 0
+        ? '(The time is too short, please open the console to view)'
+        : '';
+      $('md5').innerHTML = hash;
+      $('time').innerHTML = `${t}ms${info}`;
+      $('size').innerHTML = `${s / 1024}kb`;
+    }
+
+    const computed = (code) => {
+      console.time('md5 time')
+      const ts = performance.now();
+      const hash = FastMD5.md5(code);
+      const te = performance.now() - ts;
+      console.timeEnd('md5 time')
+      setUi(te, new Blob([code]).size, hash);
+    }
+    
+    $('input').oninput = (e) => {
+      computed(e.target.value);
+    }
+  
+    const originCode = 'abcde'.repeat(210000);
+    $('input').value = originCode;
+    computed(originCode);
+  </script>
+</body>
+</html>

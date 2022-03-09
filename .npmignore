@@ -3,6 +3,7 @@ src/
 .DS_Store
 .gitignore
 .npmignore
+index.html
 jest.config.js
 rollup.config.js
 tsconfig.json
