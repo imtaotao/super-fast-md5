@@ -37,7 +37,8 @@
       calculate(e.target.value);
     }
   
-    const originCode = 'abcde'.repeat(210000);
+    FastMD5.md5('');
+    const originCode = 'abcde'.repeat(105000);
     $('input').value = originCode;
     calculate(originCode);
   </script>
