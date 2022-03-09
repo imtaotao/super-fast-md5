@@ -15,18 +15,26 @@ Super fast and super small wasm version of `md5` algorithm, able to use in `brow
 <body>
   <script src="https://unpkg.com/super-fast-md5/dist/md5.umd.js"></script>
   <script>
-    const hash = FastMD5.md5('your content');
+    const hash = FastMD5.md5('code');
     console.log(hash);
   </script>
 </body>
 </html>
 ```
 
-### Npm
+### NPM
 
 ```js
 import { md5 } from 'super-fast-md5';
 
-const hash = md5('your content');
+// code -> `string | ArrayBuffer`
+const hash = md5('code');
 console.log(hash);
+```
+
+### Performance
+
+```
+./a.js (1024 KiB)
+> 10ms
 ```
