@@ -1,5 +1,5 @@
 {
-  "name": "super-fast-md4",
+  "name": "super-fast-md5",
   "version": "0.0.4",
   "description": "fast md5",
   "main": "dist/md5.cjs.js",
