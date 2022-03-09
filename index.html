@@ -24,7 +24,7 @@
       $('size').innerHTML = `${s / 1024}kb`;
     }
 
-    const computed = (code) => {
+    const calculate = (code) => {
       console.time('md5 time')
       const ts = performance.now();
       const hash = FastMD5.md5(code);
@@ -34,12 +34,12 @@
     }
     
     $('input').oninput = (e) => {
-      computed(e.target.value);
+      calculate(e.target.value);
     }
   
     const originCode = 'abcde'.repeat(210000);
     $('input').value = originCode;
-    computed(originCode);
+    calculate(originCode);
   </script>
 </body>
 </html>
