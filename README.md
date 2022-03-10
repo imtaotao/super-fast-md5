@@ -5,7 +5,7 @@
 
 </div>
 
-Super fast and super small `wasm` version of `md5` algorithm, able to use in `browser` and `nodejs`. The implementation comes from [hash-wasm](https://github.com/Daninet/hash-wasm), We simplify the asynchronous syntax to synchronous syntax.
+Super fast and super small (`7kb`) `wasm` version of `md5` algorithm, able to use in `browser` and `nodejs`. The implementation comes from [hash-wasm](https://github.com/Daninet/hash-wasm), We simplify the asynchronous syntax to synchronous syntax.
 
 
 [Online test platform](https://imtaotao.github.io/super-fast-md5/)
@@ -38,7 +38,23 @@ console.log(hash);
 
 ### Performance
 
+```js
+const code = 'abcde'.repeat(100000);
+
+console.time('string');
+FastMD5.md5(code);
+console.timeEnd('string'); // 10ms
+
+const buffer =  new TextEncoder().encode(code);
+console.time('buffer');
+FastMD5.md5(buffer);
+console.timeEnd('buffer'); // 6ms
 ```
-./a.js (1024 KiB)
+
+```
+./a.js [string] (1024 KiB)
 > 10ms
+
+./a.js [buffer] (1024 KiB)
+> 6ms
 ```
