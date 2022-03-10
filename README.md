@@ -39,7 +39,7 @@ console.log(hash);
 ### Performance
 
 ```js
-const code = 'abcde'.repeat(100000);
+const code = 'abcde'.repeat(200000);
 
 console.time('string');
 FastMD5.md5(code);
