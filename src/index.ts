@@ -146,12 +146,7 @@ function calculate(data: DataType) {
   return getDigestHex(digestChars, memoryView, hashLength);
 }
 
-export type DataType =
-  | string
-  | Buffer
-  | Uint8Array
-  | Uint16Array
-  | Uint32Array;
+export type DataType = string | Buffer | Uint8Array | Uint16Array | Uint32Array;
 
 export function md5(data: DataType) {
   if (!supportWasm) {
