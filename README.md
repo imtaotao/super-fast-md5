@@ -1,7 +1,7 @@
 <div align="center">
 <h2>super-fast-md5</h2>
 
-[![NPM version](https://img.shields.io/npm/v/super-fast-md5.svg?style=flat-square)](https://www.npmjs.com/package/super-fast-md5)
+[![NPM version](https://img.shields.io/npm/v/super-fast-md5.svg?color=a1b858&label=)](https://www.npmjs.com/package/super-fast-md5)
 
 </div>
 
