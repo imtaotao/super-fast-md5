@@ -45,7 +45,7 @@ console.time('string');
 FastMD5.md5(code);
 console.timeEnd('string'); // 10ms
 
-const buffer =  new TextEncoder().encode(code);
+const buffer = new TextEncoder().encode(code);
 console.time('buffer');
 FastMD5.md5(buffer);
 console.timeEnd('buffer'); // 6ms

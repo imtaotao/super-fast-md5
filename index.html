@@ -25,9 +25,10 @@
     }
 
     const calculate = (code) => {
+      const buf = new TextEncoder().encode(code);
       console.time('md5 time')
       const ts = performance.now();
-      const hash = FastMD5.md5(code);
+      const hash = FastMD5.md5(buf);
       const te = performance.now() - ts;
       console.timeEnd('md5 time')
       setUi(te, new Blob([code]).size, hash);
