@@ -1,9 +1,9 @@
 {
   "name": "super-fast-md5",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "fast md5",
   "main": "dist/md5.cjs.js",
-  "module": "dist/md5.esm-builder.js",
+  "module": "dist/md5.esm-bundler.js",
   "types": "dist/src/index.d.ts",
   "scripts": {
     "test": "jest",
