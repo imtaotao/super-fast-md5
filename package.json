@@ -1,16 +1,28 @@
 {
   "name": "super-fast-md5",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "sideEffects": false,
   "description": "fast md5",
-  "main": "dist/md5.cjs.js",
-  "module": "dist/md5.esm-bundler.js",
-  "types": "dist/src/index.d.ts",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/md5.cjs.js",
+  "unpkg": "./dist/md5.umd.js",
+  "module": "./dist/md5.esm-bundler.js",
+  "exports": {
+    ".": {
+      "import": "./dist/md5.esm-bundler.js",
+      "require": "./dist/md5.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "test": "jest",
-    "build": "rollup --config",
-    "format": "prettier --write --parser typescript \"src/**/*.(js|ts?(x))\""
+    "build": "rimraf ./dist && rollup --config && rimraf ./dist/__tests__",
+    "format": "prettier --write --parser typescript \"(src|dist)/**/*.(js|ts?(x))\""
   },
   "author": "imtaotao",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "md5",
     "fast-md5"
@@ -19,12 +31,16 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
+  "packageManager": "pnpm@9.1.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imtaotao/super-fast-md5.git"
   },
   "bugs": {
     "url": "https://github.com/imtaotao/super-fast-md5/issues"
+  },
+  "dependencies": {
+    "@types/node": "^20.14.9"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -33,6 +49,7 @@
     "@types/jest": "^27.4.0",
     "jest": "^27.5.1",
     "prettier": "^2.5.1",
+    "rimraf": "^5.0.7",
     "rollup": "^2.67.2",
     "rollup-plugin-cleanup": "^3.2.1",
     "rollup-plugin-typescript2": "^0.31.1",
