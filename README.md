@@ -14,16 +14,11 @@ Super fast and super small (`7kb`) `wasm` version of `md5` algorithm, able to us
 ### CDN
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-  <script src="https://unpkg.com/super-fast-md5/dist/md5.umd.js"></script>
-  <script>
-    const hash = FastMD5.md5('code');
-    console.log(hash);
-  </script>
-</body>
-</html>
+<script src="https://unpkg.com/super-fast-md5/dist/md5.umd.js"></script>
+<script>
+  const hash = FastMD5.md5('code');
+  console.log(hash);
+</script>
 ```
 
 ### NPM

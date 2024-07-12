@@ -1,18 +1,25 @@
-import path from 'path';
+import path from 'node:path';
+import ts from "typescript";
 import json from '@rollup/plugin-json';
 import cleanup from 'rollup-plugin-cleanup';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 
+const { dirname: __dirname } = import.meta;
+
 const outputConfigs = {
   cjs: {
     format: 'cjs',
     file: path.resolve(__dirname, 'dist/md5.cjs.js'),
   },
-  'esm-bundler': {
+  'esm-bundler-js': {
     format: 'es',
     file: path.resolve(__dirname, 'dist/md5.esm-bundler.js'),
+  },
+  'esm-bundler-mjs': {
+    format: 'es',
+    file: path.resolve(__dirname, 'dist/md5.esm-bundler.mjs'),
   },
   umd: {
     format: 'umd',
@@ -49,7 +56,7 @@ function createConfig(format, output) {
       }),
       typescript({
         clean: true, // no cache
-        typescript: require('typescript'),
+        typescript: ts,
         tsconfig: path.resolve(__dirname, './tsconfig.json'),
       }),
       ...nodePlugins,
